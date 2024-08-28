@@ -21,7 +21,7 @@ with DAG(
 
     task1 = PostgresOperator(
         task_id='create_table',
-        postgres_conn_id='postgres_local',
+        postgres_conn_id='postgres_local',  # host: host.docker.internal
         sql="""
             CREATE TABLE IF NOT EXISTS orders (
                 order_id int,
