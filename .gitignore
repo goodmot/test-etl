@@ -1,2 +1,2 @@
-\.idea
-\airflow-docker\logs
+/.idea
+/airflow-docker/logs
