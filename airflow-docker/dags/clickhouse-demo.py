@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.empty import EmptyOperator
 from airflow.sensors.external_task_sensor import ExternalTaskSensor
-from airflow_clickhouse_plugin.operators.clickhouse import ClickHouseOperator
+from apache.airflow.providers.clickhouse.operators.ClickhouseOperator import ClickhouseOperator
 
 default_args = {
     'owner': 'asukhikh',
@@ -27,7 +27,7 @@ with DAG(
     )
 
     # create click-postgres table
-    create_table_postgres_click = ClickHouseOperator(
+    create_table_postgres_click = ClickhouseOperator(
         task_id='create_table_postgres_click',
         clickhouse_conn_id='clickhouse_local',  # host: host.docker.internal
         sql="""
@@ -40,7 +40,7 @@ with DAG(
     )
 
     # create click table if not exist
-    create_table_click = ClickHouseOperator(
+    create_table_click = ClickhouseOperator(
         task_id='create_table_click',
         clickhouse_conn_id='clickhouse_local',  # host: host.docker.internal
         sql="""
@@ -54,7 +54,7 @@ with DAG(
     )
 
     # truncate
-    truncate_table_click = ClickHouseOperator(
+    truncate_table_click = ClickhouseOperator(
         task_id='truncate_table_click',
         clickhouse_conn_id='clickhouse_local',  # host: host.docker.internal
         sql="""
@@ -63,7 +63,7 @@ with DAG(
     )
 
     # insert
-    insert_into_click = ClickHouseOperator(
+    insert_into_click = ClickhouseOperator(
         task_id='insert_into_click',
         clickhouse_conn_id='clickhouse_local',  # host: host.docker.internal
         sql="""
@@ -73,7 +73,7 @@ with DAG(
     )
 
     # drop click-postgres table
-    drop_table_postgres_click = ClickHouseOperator(
+    drop_table_postgres_click = ClickhouseOperator(
         task_id='drop_table_postgres_click',
         clickhouse_conn_id='clickhouse_local',  # host: host.docker.internal
         sql='''

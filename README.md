@@ -16,3 +16,8 @@ docker compose up
 ```
 docker compose down --volumes --rmi all
 ```
+
+## Материалы
+Про Airflow provider и ClickhouseOperator можно почитать [тут](https://github.com/bryzgaloff-pypi/apache-airflow-providers-clickhouse) и  [тут](https://bigdataschool.ru/blog/news/airflow/clickhouse-airflow-integration.html).
+Также есть полезная информация про [airflow-clickhouse-plugin](https://github.com/bryzgaloff/airflow-clickhouse-plugin), но здесь он не использовался.
+
