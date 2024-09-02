@@ -13,7 +13,7 @@ default_args = {
 with DAG(
     dag_id='dag_with_postgres_operator',
     default_args=default_args,
-    start_date=datetime(2024, 8, 26),
+    start_date=datetime(2024, 8, 28),
     schedule_interval='0 0 * * *'
 ) as dag:
 
