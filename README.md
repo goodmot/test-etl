@@ -1,6 +1,7 @@
 # test-etl
 Играюсь с Airflow в докере.
 
+Для начала надо сделать виртуальное окружение.
 Для запуска Airflow в докере есть [инструкция](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html).
 
 ## Основные команды
